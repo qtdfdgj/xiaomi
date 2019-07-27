@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaomi.dao.mapper.AddressMapper">
+	<sql id="addrSql">aid, uid, name, address, phone, tel, tag, is_default</sql>
+	<select id="selectAddrByUserId" parameterType="String" resultType="Address">
+		select <include refid="addrSql" />
+		from m_address
+		where uid = #{id}
+	</select>
+	<select id="finddefaultAddress" parameterType="String" resultType="Address">
+		select <include refid="addrSql" />
+		from m_address
+		where uid =#{id} AND is_default=1
+	</select>
+	<insert id="insertAddr" parameterType="Address">
+		insert into m_address(<include refid="addrSql" />)
+		values(#{aid}, #{uid}, #{name}, #{address}, #{phone}, #{tel}, #{tag}, #{is_default})
+	</insert>
+	<update id="updateAddr" parameterType="Address">
+		update m_address
+		set uid=#{uid}, name=#{name}, address=#{address}, phone=#{phone}, tel=#{tel}, tag=#{tag}, is_default=#{is_default}
+		where aid = #{aid}
+	</update>
+	<delete id="deleteAddr" parameterType="String">
+		delete from m_address
+		where aid = #{id}
+	</delete>
+</mapper>

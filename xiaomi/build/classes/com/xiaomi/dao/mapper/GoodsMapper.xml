@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaomi.dao.mapper.GoodsMapper">
+
+<resultMap type="com.xiaomi.dao.vo.Goods" id="GoodsResultMap">
+<result property="id" column="id"/>
+<result property="name" column="name"/>
+<result property="category_name" column="stu_age"/>
+<result property="label" column="stu_address"/>
+<result property="sell_point;" column="Car"/>
+<result property="image" column="type"/>
+<result property="status" column="color"/>
+<result property="priority" column="coucno"/>
+<result property="created_time" column="couname"/>
+<result property="modified_time" column="couname"/>
+<result property="created_user" column="couname"/>
+<result property="modified_user" column="teacher"/>
+</resultMap>
+
+  <select id="selectByName" parameterType="String" resultType="com.xiaomi.dao.vo.Goods">
+    select id,name,category_name,label,sell_point,image,status,
+           priority,created_time,modified_time,created_user,modified_user
+     from m_goods WHERE name like concat('%',#{name},'%') AND status=1
+  </select>
+  
+  <select id="selectByType" parameterType="String" resultType="com.xiaomi.dao.vo.Goods">
+  select id,name,category_name,label,sell_point,image,status,
+           priority,created_time,modified_time,created_user,modified_user
+     from m_goods WHERE category_name like concat('%',#{category_name},'%') AND status=1
+  </select>
+  
+  <select id="selectByLabel" parameterType="String" resultType="com.xiaomi.dao.vo.Goods">
+  select id,name,category_name,label,sell_point,image,status,
+           priority,created_time,modified_time,created_user,modified_user
+     from m_goods WHERE label like concat('%',#{label},'%') AND status=1 
+  </select>
+  
+  <select id="selectByCategory" resultType="com.xiaomi.dao.vo.Goods">
+  select category_name
+     from m_goods WHERE status=1 
+  </select>
+  
+  <select id="selectGoodsByID" parameterType="int" resultType="com.xiaomi.dao.vo.Goods">
+  select id,name,category_name,label,sell_point,image,status,
+           priority,created_time,modified_time,created_user,modified_user
+     from m_goods WHERE id=#{id} AND status=1
+  </select>
+
+ 
+</mapper>

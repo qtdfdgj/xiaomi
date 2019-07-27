@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaomi.dao.mapper.OrderMapper">
+<sql id="OrderSql">oid,uid,gid,title,image,price,num,name,phone,address,total_price,state,order_time,pay_time,created_time,created_user,modified_user,modified_time</sql>
+<sql id="OrderSql2">oid=#{oid},uid=#{uid},gid=#{gid},title=#{title},image=#{image},price=#{price},num=#{num},name=#{name},
+phone=#{phone},address=#{address},total_price=#{total_price},state=#{state},order_time=#{order_time},pay_time=#{pay_time},
+created_time=#{created_time},created_user=#{created_user},modified_user=#{modified_user},modified_time=#{modified_time}</sql>
+<resultMap type="Order" id="OrderResultMap" >
+<id property="oid" column="oid" />
+<result property="uid" column="uid"></result>
+<result property="gid" column="gid"></result>
+<result property="title" column="title"></result>
+<result property="image" column="image"></result>
+<result property="price" column="price"></result>
+<result property="num" column="num"></result>
+<result property="name" column="name"></result>
+<result property="phone" column="phone"></result>
+<result property="address" column="address"></result>
+<result property="total_price" column="total_price"></result>
+<result property="state" column="state"></result>
+<result property="order_time" column="order_time"></result>
+<result property="pay_time" column="pay_time"></result>
+<result property="created_time" column="created_time"></result>
+<result property="created_user" column="created_user"></result>
+<result property="modified_user" column="modified_user"></result>
+<result property="modified_time" column="modified_time"></result>
+</resultMap>
+  <insert id="insertOrder" parameterType="com.xiaomi.dao.vo.Order" >
+  insert into m_order(<include refid="OrderSql"/>) values(#{oid},#{uid},#{gid},#{title},#{image},#{price},#{num},#{name},#{phone},#{address},#{total_price},#{state},#{order_time},#{pay_time},#{created_time},#{created_user},#{modified_user},#{modified_time})
+  </insert>
+ <select id="selectOrderByUserId" parameterType="String" resultMap="OrderResultMap">
+ 	select <include refid="OrderSql"/> from m_order where uid=#{uid}
+ </select>
+  <delete id="deleteOrder" parameterType="String">
+   	delete from m_order where oid = #{oid}
+ </delete>
+ <update id="updateOrder" parameterType="Order">
+	update m_order set <include refid="OrderSql2"/> where oid=#{oid}
+ </update>
+ <select id="selectOrderByOid" parameterType="String" resultType="Order">
+ 	select <include refid="OrderSql"/> from m_order where oid=#{oid}
+ </select>
+ 
+ <select id="selectNameByVersionId" parameterType="String" resultType="String">
+ 	SELECT g.name FROM m_goods g LEFT JOIN  m_good_version v ON v.good_id=g.id WHERE v.id=#{id}
+ </select>
+ <select id="selectImageByVersionId" parameterType="String" resultType="String">
+ 	SELECT g.image FROM m_goods g LEFT JOIN  m_good_version v ON v.good_id=g.id WHERE v.id=#{id}
+ </select>
+ <select id="selectPriceByVersionId" parameterType="String" resultType="float">
+ 	SELECT v.price FROM m_goods g LEFT JOIN  m_good_version v ON v.good_id=g.id WHERE v.id=#{id}
+ </select>
+ 
+ 
+</mapper>

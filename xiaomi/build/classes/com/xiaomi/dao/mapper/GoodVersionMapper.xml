@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.xiaomi.dao.mapper.GoodVersionMapper">
+<resultMap type="Good_version" id="GoodVersionReultMap" >
+<id property="id" column="id" />
+<result property="good_id" column="good_id"></result>
+<result property="num" column="num"></result>
+<result property="price" column="price"/>
+<result property="version" column="version"/>
+</resultMap>
+  <update id="updateGood" parameterType="Good_version" >
+  update m_good_version set num=#{num} where id=#{id}
+  </update>
+ <select id="selectByGoodId" parameterType="String" resultMap="GoodVersionReultMap">
+ select id,good_id,num,price,version from m_good_version where good_id=#{id}
+ </select>
+ <select id="selectByGoodVersionId" parameterType="String" resultMap="GoodVersionReultMap">
+ select id,good_id,num,price,version from m_good_version where id=#{id}
+ </select>
+</mapper>

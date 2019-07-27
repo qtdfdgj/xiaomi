@@ -1,0 +1,191 @@
+.smart-green {
+margin-left:auto;
+margin-right:auto;
+max-width: 500px;
+background: #F8F8F8;
+padding: 30px 30px 20px 30px;
+font: 12px Arial, Helvetica, sans-serif;
+color: #666;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+}
+.smart-green h1 {
+font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+padding: 20px 0px 20px 40px;
+display: block;
+margin: -30px -30px 10px -30px;
+color: #FFF;
+background: #9DC45F;
+text-shadow: 1px 1px 1px #949494;
+border-radius: 5px 5px 0px 0px;
+-webkit-border-radius: 5px 5px 0px 0px;
+-moz-border-radius: 5px 5px 0px 0px;
+border-bottom:1px solid #89AF4C;
+}
+.smart-green .bk {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 20px 0px 20px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+    background: #3399FF;
+    text-shadow: 1px 1px 1px #949494;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-bottom:1px solid #3399FF;
+}
+.smart-green h1{
+display: block;
+    text-align: center;
+    white-space: nowrap;
+font-size: 24px;
+color: #FFF;
+}
+
+.smart-green label {
+display: block;
+margin: 2px 2px 2px;
+
+}
+.smart-green label>span {
+
+float: left;
+margin-top: 12px;
+    margin-left: 10px;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+    width: 40px;
+color: #ff6700;
+}
+.smart-green input[type="text"], .smart-green select {
+color: #555;
+height: 30px;
+line-height:15px;
+width: 40%;
+padding: 0px 0px 0px 10px;
+margin-top: 5px;
+border: 1px solid #ff6700;
+background: #FBFBFB;
+outline: 0;
+-webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.smart-green .modify input[type="text"], .smart-green select {
+    color: #555;
+    height: 30px;
+    line-height:15px;
+    width: 70%;
+    padding: 10px 5px 5px 10px;
+    margin-top: 15px;
+    border: 1px solid #ff6700;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.smart-green .modifypwd input[type="password"]
+{
+    color: #555;
+    height: 30px;
+    line-height:15px;
+    width: 50%;
+    padding: 10px 5px 5px 10px;
+    margin-top: 15px;
+    border: 1px solid #ff6700;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.smart-green .modifypwd span
+{
+    display:inline-block;margin-left:20px;font-size: 12px;color: #ccc;font-weight: bold;
+}
+.smart-green .contain {
+    width: 40%;
+    height: 30px;
+    float: left;
+    padding-top: 12px;
+    margin-top: 2px;
+    cursor: pointer;
+    padding-left: 10px;
+    margin-left: 10px;
+    text-align: left;
+    background-repeat: no-repeat;
+}
+.smart-green .contain span{
+    float: left;
+    margin-top: 12px;
+    margin-left: 2px;
+    white-space: nowrap;
+    font-size: 14px;
+    width: 40px;
+    color: #ff6700;
+}
+
+.smart-green checkbox {
+    width: 24px;
+    height: 30px;
+    float: left;
+    padding-top: 12px;
+    margin-top: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: -24px 0;
+}
+
+.smart-green radio{
+    width: 24px;
+    height: 30px;
+    float: left;
+    padding-top: 12px;
+    margin-top: 18px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: -24px 0;
+}
+.on {
+    background-position: 0 0;
+}
+.smart-green select {
+    margin-top: 12px;
+    background-color: #99BBFF;
+    padding: 5px 5px 5px 0px;
+appearance:none;
+    position:relative;
+    left:5%;
+    right:40px;
+    background: #f5f6f7;
+-webkit-appearance:none;
+-moz-appearance: none;
+text-indent: 0.01px;
+text-overflow: '';
+width:60%;
+height:35px;
+}
+.smart-green .button{
+background-color: #ff6700;
+border-radius: 5px;
+   alignment: right;
+-webkit-border-radius: 5px;
+-moz-border-border-radius: 5px;
+border: none;
+    margin-right: 10px;
+padding: 10px 25px 10px 25px;
+color: #FFF;
+text-shadow: 1px 1px 1px #949494;
+}
+.smart-green .button:hover {
+background-color:#ee8800;
+}

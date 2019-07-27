@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaomi.dao.mapper.CartMapper">
+
+<select resultType="com.xiaomi.dao.vo.Cart" parameterType="int" id="selectByUserId">select cid,uid,gid,num,created_time from m_cart where uid = #{id} </select>
+<select resultType="com.xiaomi.dao.vo.Cart" parameterType="int" id="findCart">select cid,uid,gid,num,created_time from m_cart where cid = #{cid} </select>
+<update  parameterType="com.xiaomi.dao.vo.Cart" id="updateCart">update  m_cart  set
+    uid = #{uid},
+    gid= #{gid},
+   num = #{num},
+    created_time = #{created_time}
+  where cid = #{cid}</update> 
+
+<delete parameterType="int" id="deleteCart">delete from m_cart where cid = #{id} </delete>
+
+<insert id="insertCart" parameterType="com.xiaomi.dao.vo.Cart" >
+  insert into m_cart values(#{cid},#{uid},#{gid},#{num},#{created_time})
+  </insert>
+
+</mapper>
